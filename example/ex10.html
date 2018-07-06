@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1> Object</h1>
+  <h2>create</h2>
+  <script>
+    var member = {
+      "programmer": "egoing",
+      "designer": "leezche",
+      "project manager": "mindo"
+    };
+    document.write("project manager : " + member["project manager"] + "<br>");
+    document.write("designer : " + member.designer + "<br>");
+    document.write("programmer : " + member.programmer + "<br>");
+
+    member.publisher = "sophie";
+    document.write("publisher : " + member.publisher+"<br>");
+
+    member["data scientist"] = "taeho";
+    document.write("data scientist : " + member["data scientist"]);
+  </script>
+
+  <h2> Iterate </h2>
+  <script>
+    for(var key in member){
+      document.write(key + " : ", member[key] + "<br>");
+    }
+  </script>
+
+
+
+</body>
+
+</html>
