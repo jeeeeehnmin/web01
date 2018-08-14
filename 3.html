@@ -6,7 +6,13 @@
   <meta charset="utf-8">
   <!-- <link rel="stylesheet" href="resource/style.css"> -->
   <script>
-      function setLinkFontColor(color){
+
+    /*
+      변수에 객체를 담는다.
+    */
+
+    var Link = {
+      setColor: function(color){
         var alist = document.querySelectorAll('a');
         var i = 0;
 
@@ -15,21 +21,27 @@
           i += 1;
         }
       }
-      function setFontColor(color){
-        document.querySelector('body').style.Color = color;
-      }
+    }
 
-      function setBackgroundColor(color){
-        document.querySelector('body').style.backgroundColor = color;
+      var Body = {
+        setFontColor: function (color){
+          document.querySelector('body').style.color = color;
+        },
+        /*
+          , 주의
+          객체의 property를 구분할 때 필요
+        */
+        setBackgroundColor: function (color){
+          document.querySelector('body').style.backgroundColor = color;
+        }
       }
 
       function nightDayHandler(self){
-        var target = document.querySelector('body')
+        var target = document.querySelector('body');
         if(self.value === 'night'){
 
           Body.setBackgroundColor('#45b9d3');
           Body.setFontColor('#314159');
-
           self.value = 'day';
 
           Link.setLinkFontColor('#b9d345');
@@ -37,7 +49,6 @@
         } else {
           Body.setBackgroundColor('white');
           Body.setFontColor('black');
-
           self.value = 'night';
 
           Link.setLinkFontColor('blue');
@@ -54,7 +65,7 @@
   <div id="function_button" style="display:inline-block; margin:10px 5px;padding:10px 5px;">
     <h4 style="display:inline;">function_button</h4>
 
-    <input type="button" value="night" onclick="
+    <input id="night_day" type="button" value="night" onclick="
       nightDayHandler(this);
       ">
   </div>
