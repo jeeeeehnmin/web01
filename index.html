@@ -5,10 +5,22 @@
   <title> WEB01/1.html </title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="resource/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="resource/colors.js"></script>
 </head>
 
 <body>
   <h1><a href="index.html" target="_blank">WEB</a></h1>
+
+  <!--function -->
+  <div id="function_button" style="display:inline-block; margin:10px 5px;padding:10px 5px;">
+    <h4 style="display:inline;">function_button</h4>
+
+    <input id="night_day" type="button" value="night" onclick="
+      nightDayHandler(this);
+      ">
+  </div>
+
   <div id="grid">
     <ol>
       <li><a href="1.html" target="_blank">HTML</a></li>
